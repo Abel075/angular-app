@@ -1,0 +1,133 @@
+
+Que es Angular?
+
+Es un framework desarrollado en TypeScript por google en el 2016, este nos sirve para crear sitios web en una sola pagina, esta orintado a separar nuestro proyecto FrondEnd del Backend.
+
+En Angular si cambiamos de menu o actualizamo la pagina este no se actualiza, sino que simplemente reemplaza su contenido.
+
+En Angular Simplemente cramos un cliente que es el encargado de comunicarse con el Backend.
+
+Angular a igual que TypeScript cuenta con su propio CLI- Command Line Interface, el cual nos ayudara a desarrollar nuestras aplicaciones de forma ams rapida, generando acomponentes, servicios y  mudulos con tan solo algunas lineas  de codigo.
+
+Requisitos:
+Node.js
+npm install -g @angular/cli
+
+En TypeScript usamos tsc para compilar,
+En Angular usaremos ng serve --open
+
+iniciar una aplicacion:
+ng new nombreDeLaAplicion
+
+// Diferencia entre Scss y Sass: En el archvivo Scss se colocan {} y en el archvivo Sass NO.
+
+Una vez creada la aplicacion nos movemos a la ubicacion de la carpeta e iniciamos el servidor con ng serve --open ,para que abra en el navegador.
+
+Si todo sale bien correra en localhost:4200
+
+**Estructura de Angular:
+
+e2e: Se encarga de realizar pruebas automaticas.
+
+node_modules: Contiene todas las dependencias de nuestro proyecto, osea los archivos necesarios para su funcionamiento.
+
+src: Carpeta que contiene la mayor parte de los archivos del sitio. Html, Css, TypeScript, etc.
+    App: archivos principales de la aplicacion.
+    Assets: Imagenes del sitio.
+    Environments: Ajustes de produccion o de pruebas.
+    Favicon: Icono de la aplicacion.
+    index.html: En si es la pagina, lo que se va a mostrar, y por medio d app-root vamos a segmentarla.
+    style.scss: Estilos globales.
+    karma.confif.js: Para hace pruebas.
+    test.ts: Para realizar prebas.
+
+.editorconfig: Aqui se encuentran las configuraciones de nestro editor de texto.
+
+.gitignore: Donde definimos que archivos o carpetas no se subiran a algun repositorio git.
+
+angular.json: Este archivo incluye las configuraciones de Angular.Como ser la ruta donde se va a guardar nuestro sitio web ya complilado.
+
+package.json: Contiene las configuraciones de nuestra aplicacion, como el nombre, la version y todas las depensdencias necesarias para su funcionamiento.
+
+tsconfig.json: Este archivo contien la configuracion de TypeScript. Como que version de js va a utilizar entre otras.
+
+tslint.json: Contiene las reglas de TypeScript.
+
+
+Angular en si la mayor parte de las cosas con componentes.
+
+Que es un componente?
+Un compomente es parte de nuestra aplicacion que ceamos para luego implementarla, imaginemos la etiquetas Html normales pero con las funciones que nosotros deseemos.
+Ejemplo:
+
+<encabezado></encabezado>
+
+Y este esta compuesto por un archivo Html, un archivo Css y el archivo de la logica TypeScript.
+
+* Interpolacion:
+
+Forma de mostrar la variables de un archivo TypeScript dentro de un archivo Html.
+
+
+*Property Binding;
+
+Es una forma por el cual podemos asignar el valor de una varible a una propiedad de un elemento Html.
+
+
+*Two way Binding:
+Mostrar y a la vez asignar valor con [(ngModdel)]
+Hay que importar FormsModule . Es necesario para trabajar con formularios. Es el qeu utiliza Angular para interactuar con ellos.
+
+
+**Eventos en Html
+Los eventos so nuna forma de llamr a una funcion por medio de alguna accion por ejemplo presionar un boton se ejecuta el evento click:
+
+(click): El evento se ejecuta caundo presionamos algo
+(onModelChange): caundo el valor de nuestra variable cambia.
+(focus): Al interactuar con input y presionarlo para empezar a escribir este evento es lanzado.
+(keydown): Al presionar la tecla sobre cierto elemento.
+(keyup): Cuando soltamos la tecla este evento es ejecutado.
+(input): Mientras estamos escribiendo.
+(dblclick): Al dar doble clik sobre un elemento.
+(mousecenter): Cuando movemos nuestro mouse sobre el elemento.
+(mouseleave): Al salir de ese elemento.
+
+*(ngModelChange): Siempre tiene que tenr un [(ngModdel)]
+
+
+**Directivas: Las directivas son estructuras que nos permiten alegrar, eliminar o manipular elemtos del Dom, por ejemplo, nos gustaria mostrar un loading antes de que termine de cargarnos una peticion a una api o mostrar todos los items de un arreglo en pantalla.
+
+    *ngIf: Esto nos permite renderizar o no un elemento Html en base a un booleano. Este se aplica en las etiquetas Html y se agrega de la siguiente forma:
+
+    <div *ngIf="productos.length ==0">
+        <p>No hay datos disponibles</p>
+    </div>
+
+    *ngFor: Recorre todos los elementos de un arreglo y asi mostrarlos en pantalla.
+
+    var productos = ["Cafe","Agua","Azucar","Refresco"]
+
+    <div *ngFor="let producto of productos">
+        <p>Este productos es: {{producto}}</p>
+    </div>
+
+    *ngSwith: Con esta directiva podemos hacer evaluar una variable con posibles valores tal como lo harias en TypeScript.
+    Y esta estructura es la siguiente:
+
+    <div [ngSwith]="pestaña">
+        <p *ngSwithCase="perfil">El Perfil</p>
+        <p *ngSwithCase="puntos">Los Puntos</p>
+        <p *ngSwithCase="info">Los Puntos</p>
+        <p *ngSwithDefault="perfil">Selecciona una tab</p>
+    </div>
+
+**Instalcaion de bootstrap:
+Por Node Modules o Por CDN, siendo CDN la opcion mas sencilla.
+
+**Pipes: Los pipes en Angular son pequeñas funciones que nos ayudan a transformar datos o darles un formato para que podamos mostrar estos en pantalla. Un ejemplo bien practico es el de transformar numeros a moneda:
+con un pipe se aplicaria asi:
+var totalVentas: 152512
+
+<p>Hola, las ventas son: {{totalVentas | currency: 'L' }}</p>
+
+Hola, las ventas son: L 152,512.00
