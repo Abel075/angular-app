@@ -144,3 +144,22 @@ Ejemplo con:
 
 
 *Parametros Entre componentes: Para pasar daros entre compomentes. Por ejemplo un lista de articulos y su descripcion.
+
+
+**FormBuilder con ReactiveFormsModule
+
+**Servicios: Forma de compartir informacion, datos o funciones entre componentes.
+Por Ejemplo:
+
+    Login                      Pagina de inicio                       Menu
+    Usuarios                    Menu                                  Items
+    Nombre                      Estadisticas                          Nombre USuario
+    Ajustes                          ===                                 ==
+        ==                           ===                                 ==
+        ===============================================================
+                                  Servicio Usuario
+
+
+Un servicio nos ayuda a tner una sola instancia de un usaurio. El cambio en un servicio se veria reflejado en el login , la pagina de inicio y el menu. Los datos se maneja en el servicio. Adicional el servicio sirve para comunicarse con el Backend y consumir una api directamente.
+
+Los servicios se inyectan para no tenr  que estar instanciando cada una de ellas cunad olos queramos usar en cualquier componente.

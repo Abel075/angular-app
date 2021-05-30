@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Articulo } from '../models/articulo';
 
 @Component({
   selector: 'app-articulo-detalle',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticuloDetalleComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private rutaActiva:ActivatedRoute) { } /*  Inyectando la ruta por medio del constructor */
+
+  articulo: Articulo | undefined = undefined;
 
   ngOnInit(): void {
+
+    this.articulo = JSON.parse(this.rutaActiva.snapshot.params.articulo);
+    
+
+    // Recibiendo parametros del componente articulo
+    ;
+    
+
   }
 
 }
