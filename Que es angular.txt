@@ -134,3 +134,13 @@ Hola, las ventas son: L 152,512.00
 
 **Routing de Angular:
 
+routerLink +  routerLinkActive + routerLinkActiveOptions
+
+*Children: Hijos de componentes principales o router-outlet.
+Ejemplo con:
+    Usuarios
+    Editar Usaurios
+    Agregar Usuarios
+
+
+*Parametros Entre componentes: Para pasar daros entre compomentes. Por ejemplo un lista de articulos y su descripcion.
