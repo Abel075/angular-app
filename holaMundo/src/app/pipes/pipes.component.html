@@ -1,12 +1,24 @@
-
-
-<p>
-    {{ titulo | titlecase}}
-</p>
-
-
-Uppercase
+<h4>Uppercase
 
 lowercase
 
 titlecase
+</h4>
+<p>
+    {{ titulo | titlecase}}
+</p>
+
+<h4>Currency</h4>
+<p>{{ dinero | currency : 'Args' }}</p>
+
+<h4>Ganancias</h4>
+<p>{{ ganancias | percent }}</p>
+
+<h4>Date</h4>
+<p>{{ fechaNacimiento | date: 'shortDate'}}</p>
+
+<div class="cuadrado">
+    <p>{{ textoLargo | continuara}}</p>
+</div>
+
+

@@ -131,3 +131,6 @@ var totalVentas: 152512
 <p>Hola, las ventas son: {{totalVentas | currency: 'L' }}</p>
 
 Hola, las ventas son: L 152,512.00
+
+**Routing de Angular:
+
