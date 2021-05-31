@@ -163,3 +163,56 @@ Por Ejemplo:
 Un servicio nos ayuda a tner una sola instancia de un usaurio. El cambio en un servicio se veria reflejado en el login , la pagina de inicio y el menu. Los datos se maneja en el servicio. Adicional el servicio sirve para comunicarse con el Backend y consumir una api directamente.
 
 Los servicios se inyectan para no tenr  que estar instanciando cada una de ellas cunad olos queramos usar en cualquier componente.
+
+
+**Peticiones Http: Es un protocolo de comunicacion que nos permite tranferir datos en internet. Por ejemplo una ploicacion se comunica a una base de datos por este protocolo.
+
+    Como se usa: La mayoria de aplicaciones hoy en dia, estan divididas en 2 partes y es de la siguiente forma:
+        El Backend es el encargado de la base de datos, manipulacion de informacion. crear registros, etc.
+        El FrondEnd este es un cliente cliente por medio del cual el usuario interactua y es encargado de comunicarse con el Backend por medio de peticiones HTTP a un API Rest para hacer uso de sus funciones ya sea leer informacion, crear registros, borrar, actualizar, etc.
+
+
+Que es una Api Rest?
+
+En el 2002 cuando Roy Fielding creo las especificaciones HTTP, dio un cambio total a como se desarrollan las paginas web a la fecha, debido a que antes el codigo de Backend y el FrondEnd estaban juntos.
+Ejemplos de una pagina Php se desarrollaba asi:
+<?php echo "<h1> Soy un texto</h1>";>
+Gracias a este cambio, hoy en dia la mayoria de las paginas como por ejemplo, Facebook, Youtube, Google, etc utilizan un API Rest (Backend) y un cliente(FrondEnd) en su desarrollo.
+Lo cual es una ventaja, porque simplemente desarrollamos un Backend y podriamos crear varios clientes que lo consuman, una pagina web, un aplicacion movil o hasta incluso otra api, esto nos permitira escalar nuestra aplicacion sin complicaciones.
+
+Metodos de peticiones:
+
+Get: Este nos sirve para recibir informacion del servidor ya sea en formato Json o xml.
+Post: Se  utiliza usualmente para enviar informacion al servidor(crear registros,solicitar datos) y tambien nos puede devolver datos.
+Put: Es bastante similar al Post, pero este se utiliza con frecuencia para actualizar datos.
+Delete: Esta se utiliza para borrar datos.
+
+Tecnologias mas utilizadas para Backend:
+-PHP puro o con algun framework como laravel, Symfony, etc. 
+-Node JS utilizando javascript
+-ASP.NET CORE para los que estan acostrumbrados a trabajar con C#
+-RUBY con Ruby On Rails
+-Python usando Django
+-JAVA
+
+*Observable y Subscribe:
+
+Un observable es un valor el cual estamos observando y al tener este un cambio, se procedera a realizar una accion que especifiquemos por ejemplo actualizar los datos, forma parte de la libreria rxjs que implementa programacion reactiva.
+Por lo general nos suscribimos a estos observables, esto con el fin de estar pendientrs de su informacion y ejecutar cierta tarea.
+Un ejemplo que hemos visto y que lo hace Angular es en las rutas, el eata observando las urls y al cambiar este redirecciona al componente que se habia especificado.
+
+**Local Storage: Datos almacenados en el navegador. Por lo general funciona guardando llaves, que contine un valor, ese valor siempre sera string. Por ejemplo:
+
+       Llave                    Valor
+       nombre                   Juan
+       esNuevo                  false
+       comproAntes              no,pero casi
+
+
+    Metodos Principales son 4:
+    setItem("llave","valor")// Ejemplo    localStorage.setItem("nombre","pedro")
+    getItem("llave")//Ejemplo             localStorage.getItem("nombre")---Resultado: "PEdro"
+    removeItem("llave")//Elimina la llave ejemplo localStorage.removeItem("nombre")
+    clear()//Elimina todos los elementos de localStorage
+
+    Cuando es comveniente utilizarlo: Cuando los datos son necearios por un cort olapso de timpo o hasta que el usuario borre e lcahe del navegador o en aplicaciones moviles ya que se borran cuando se desinstalan las aplicaciones.
